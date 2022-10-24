@@ -3,12 +3,219 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap w/ Webpack</title>
+    <title>World vessel tracking. Marine digital technologies</title>
+    <meta name="yandex-verification" content="825731bb3d30ae90">
   </head>
   <body>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>Hello, Bootstrap and Webpack!</h1>
-      <button class="btn btn-primary">Primary button</button>
+    <div class="wrapper">
+      <header>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container px-2">
+            <a href="#" class="my-color"
+              ><img
+                src="/img/logo-white.svg"
+                alt="SeaRadar24"
+                width="50"
+                height="70"
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav gap-3 me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link logo" aria-current="page" href="/">
+                    Searadar24
+                    <div>Live vessels on the Sea</div>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-warning" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-warning" href="#">Our solutions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-warning" href="#">Our team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-warning" href="#">Contact us</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button class="btn btn-outline-warning" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="hide-finder"></div>
+        <div class="container-fluid">
+          <div>
+            <script>
+              var width = "100%"; // width in pixels or percentage
+              var height = "500"; // height in pixels
+              var latitude = "20.00"; // center latitude (decimal degrees)
+              var longitude = "30.00"; // center longitude (decimal degrees)
+              var zoom = "3"; // initial zoom (between 3 and 18)
+              var names = false; // always show ship names (defaults to false)
+              function goToMap(lat, lon, zoom) {
+                let finder = document.querySelector("#vesselfinder");
+                finder.src = `https://www.vesselfinder.com/aismap?zoom=${zoom}&amp;lat=${lat}&amp;lon=${lon}`;
+                // finder.src = `https://www.vesselfinder.com/aismap?imo=9506291`;
+              }
+            </script>
+            <script
+              type="text/javascript"
+              src="https://www.vesselfinder.com/aismap.js"
+            ></script>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="container pt-4 mx-auto" id="routes">
+            <h1 class="pb-3">Popular routes</h1>
+            <div class="d-flex flex-wrap gap-3 pb-3">
+              <button class="btn btn-warning" onclick="goToMap(54.11, 9.36, 9)" data-bs-toggle="collapse" data-bs-target="#collapseKiel">
+                Kiel canal
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(9.09, -79.63, 10)" data-bs-toggle="collapse" data-bs-target="#collapsePanama">
+                Panama canal
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(30.41, 32.33, 10)" data-bs-toggle="collapse" data-bs-target="#collapseSuez">
+                Suez canal
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(53.32, 9.58, 9)" data-bs-toggle="collapse" data-bs-target="#collapseHamburg">
+                Hamburg
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(1.08, 104.00, 9)" data-bs-toggle="collapse" data-bs-target="#collapseSingapore">
+                Singapore
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(38.50, 118.20, 9)" data-bs-toggle="collapse" data-bs-target="#collapseTianjin">
+                Tianjin
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(25.20, 55.23, 9)" data-bs-toggle="collapse" data-bs-target="#collapseDubai">
+                Dubai
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(36.05, 120.10, 9)" data-bs-toggle="collapse" data-bs-target="#collapseQingdao">
+                Qingdao
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(22.26, 114.87, 8)" data-bs-toggle="collapse" data-bs-target="#collapseHongKong">
+                Hong Kong
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(69.09, 32.53, 6)" data-bs-toggle="collapse" data-bs-target="#collapseNSRW">
+                Nothern Sea Route west
+              </button>
+              <button class="btn btn-warning" onclick="goToMap(57.09, 164.53, 4)" data-bs-toggle="collapse" data-bs-target="#collapseNSRE">
+                Nothern Sea Route east
+              </button>
+
+            </div>
+            <div class="collapse" id="collapseKiel" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Kiel canal</h2>
+                Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+              </div>
+            </div>
+            <div class="collapse" id="collapsePanama" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Panama canal</h2>
+                The Panama Canal is an artificial 82 km waterway in Panama that connects the Atlantic Ocean with the Pacific Ocean.
+              </div>
+            </div>
+            <div class="collapse" id="collapseSuez" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Suez canal</h2>
+                The Suez Canal is an artificial sea-level waterway in Egypt, connecting the Mediterranean Sea to the Red Sea through the Isthmus of Suez; and dividing Africa and Asia. Constructed by the Suez Canal Company between 1859 and 1869, it officially opened on 17 November 1869.
+              </div>
+            </div>
+            <div class="collapse" id="collapseHamburg" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Hamburg</h2>
+                The Port of Hamburg is a seaport on the river Elbe in Hamburg, Germany, 110 kilometres from its mouth on the North Sea. Known as Germany's "Gateway to the World".
+              </div>
+            </div>
+            <div class="collapse" id="collapseSingapore" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Singapore</h2>
+                The Port of Singapore refers to the collective facilities and terminals that conduct maritime trade, and which handle Singapore's harbours and shipping.
+              </div>
+            </div>
+            <div class="collapse" id="collapseTianjin" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Tianjin</h2>
+                The Port of Tianjin (Tianjin Gang, Chinese: 天津港; pinyin: tiānjīn gǎng), formerly known as the Port of Tanggu, is the largest port in Northern China and the main maritime gateway to Beijing.
+              </div>
+            </div>
+            <div class="collapse" id="collapseDubai" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Dubai</h2>
+                Port of Jebel Ali, also known as Mina Jebel Ali, is a deep port located in Jebel Ali, Dubai, United Arab Emirates. Jebel Ali is the world's ninth busiest port, the largest man-made harbour.
+              </div>
+            </div>
+            <div class="collapse" id="collapseQingdao" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Qingdao</h2>
+                The Port of Qingdao is a seaport on the Yellow Sea in the vicinity of Qingdao, Shandong Province, People's Republic of China. It is one of the ten busiest ports in the world.
+              </div>
+            </div>
+            <div class="collapse" id="collapseHongKong" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>The Hong Kong</h2>
+                The Port of Hong Kong is located on the Kowloon Peninsula off the South China Sea. It is a major hub in the Southeast and East Asian regions. The port offers 400 container liner services a week to more than 500 destinations worldwide.
+              </div>
+            </div>
+            <div class="collapse" id="collapseNSRW" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>Nothern Sea Route west</h2>
+                The Northern Sea Route is a shipping route officially defined by Russian legislation as lying east of Novaya Zemlya and specifically running along the Russian Arctic coast from the Kara Sea, along Siberia, to the Bering Strait.
+              </div>
+            </div>
+            <div class="collapse" id="collapseNSRE" data-bs-parent="#routes">
+              <div class="card card-body">
+                <h2>Nothern Sea Route east</h2>
+                The Northern Sea Route is a shipping route officially defined by Russian legislation as lying east of Novaya Zemlya and specifically running along the Russian Arctic coast from the Kara Sea, along Siberia, to the Bering Strait.
+              </div>
+            </div>
+        </div>
+      </main>
+      <footer>
+        <div class="container-fluid navbar mt-auto py-4">
+          <div class="container">
+            <div class="footer-logo">
+              <img
+            src="/img/logo-white.svg"
+            alt="SeaRadar24"
+            width="25"
+        /></a><span>Searadar24</span>
+            </div>
+            <div>
+              <ul class="nav gap-3">
+                <li><a href="#" class="text-light">About us</a></li>
+                <li><a href="#" class="text-light">Our solutions</a></li>
+                <li><a href="#" class="text-light">Our team</a></li>
+                <li><a href="#" class="text-light">Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="./main.js"></script>
   </body>
