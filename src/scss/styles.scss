@@ -1,1 +1,70 @@
+@import "./bootstrap-custom";
 @import "~bootstrap/scss/bootstrap";
+
+$purple: #2f2d49;
+
+html,
+body {
+  height: 100%;
+  font-size: 10px;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 1.6rem;
+}
+header {
+  height: 80px;
+}
+main {
+  flex-grow: 1;
+  margin: -37px 0 0;
+  padding: 0 0 20px;
+}
+footer {
+  min-height: 40px;
+  background-color: $purple;
+  color: $white;
+  .nav {
+    font-size: 12px;
+  }
+}
+.footer-logo {
+  display: flex;
+  gap: 1rem;
+}
+.navbar {
+  background-color: $purple;
+  .navbar-nav {
+    align-items: center;
+  }
+}
+.container {
+  width: 80%;
+}
+.container-fluid {
+  --bs-gutter-x: 0;
+}
+.logo {
+  width: 130px;
+  line-height: 17px;
+  color: $white;
+  div {
+    font-size: 1rem;
+  }
+}
+.logo:hover {
+  color: $white;
+}
+.hide-finder {
+  position: relative;
+  top: 2rem;
+  width: 100%;
+  height: 2rem;
+  display: block;
+  background: $purple;
+}
+.btn {
+  font-size: 1.4rem;
+}

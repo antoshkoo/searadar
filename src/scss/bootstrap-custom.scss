@@ -1,0 +1,14 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+$my-yellow: #ffe884;
+
+$custom-theme-colors: map-merge(
+  $theme-colors,
+  (
+    "my-yellow": $my-yellow,
+  )
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
