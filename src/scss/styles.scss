@@ -1,34 +1,31 @@
 @import "./bootstrap-custom";
 @import "~bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css");
 
 $purple: #2f2d49;
 
 html,
 body {
   height: 100%;
-  font-size: 10px;
 }
 .wrapper {
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-size: 1.6rem;
 }
 header {
-  height: 8rem;
+  z-index: 10;
 }
 main {
   flex-grow: 1;
-  margin: -3.7rem 0 0;
+  margin: -2.2rem 0 0;
   padding: 0 0 2rem;
 }
 footer {
   min-height: 4rem;
   background-color: $purple;
   color: $white;
-  .nav {
-    font-size: 1.2rem;
-  }
 }
 .footer-logo {
   display: flex;
@@ -50,11 +47,12 @@ footer {
   display: flex;
   align-items: center;
   gap: 1rem;
-  width: 20rem;
+  width: 11rem;
   color: $white;
   text-decoration: none;
   p {
-    font-size: 1rem;
+    font-size: 0.5rem;
+    margin: 0;
   }
 }
 .logo:hover {
@@ -62,12 +60,22 @@ footer {
 }
 .hide-finder {
   position: relative;
-  top: 2rem;
   width: 100%;
-  height: 2rem;
+  height: 1rem;
   display: block;
   background: $purple;
 }
-.btn {
-  font-size: 1.4rem;
+#map {
+  width: 100%;
+  height: 200px;
+}
+.mapboxgl-marker {
+  background-image: url("/src/img/mapbox-marker-kz.svg");
+  background-size: cover;
+  width: 35px;
+  height: 53px;
+  cursor: grab;
+}
+.border-radius-none {
+  border-radius: unset;
 }
